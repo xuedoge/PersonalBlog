@@ -1,0 +1,17 @@
+
+    <button nz-button (click)="showModal()">
+      <span>Add Class</span>
+    </button>
+    <nz-modal
+      [(nzVisible)]="isVisible"
+      nzTitle="Add Class"
+      (nzOnCancel)="handleCancel()"
+      (nzOnOk)="handleOk()"
+      [nzOkLoading]="isOkLoading"
+    >
+    <div>
+        <input nz-input placeholder="Add a new class here" [(ngModel)]="className" />
+    </div>
+      
+    </nz-modal>
+  

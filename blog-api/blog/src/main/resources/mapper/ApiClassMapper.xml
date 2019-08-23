@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xue.learn.blog.mapper.ApiClassMapper">
+
+	<select id="showClasses"
+		resultType="com.xue.learn.blog.pojo.ApiClassBean">
+		SELECT *
+		FROM Intern_test.xx57.blog_Classes
+	</select>
+	<insert id="addClass" parameterType="String">
+		INSERT INTO
+		Intern_test.[xx57].[blog_Classes] (ClassName)
+		VALUES (#{className})
+	</insert>
+</mapper>

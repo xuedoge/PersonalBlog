@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xue.learn.blog.mapper.ApiCommentMapper">
+
+	<select id="showComments" parameterType="int"
+		resultType="com.xue.learn.blog.pojo.ApiCommentBean">
+		SELECT [ArticleID]
+		,[CommentID]
+		,[FatherID]
+		,[CreateTime]
+		,[UserName]
+		,[Content]
+		FROM [Intern_test].[xx57].[blog_Comment]
+		WHERE
+		ArticleID =
+		#{articleID}
+	</select>
+	<insert id="addComment"
+		parameterType="com.xue.learn.blog.pojo.ApiCommentBean">
+		INSERT INTO Intern_test.xx57.blog_Comment
+		(ArticleID,FatherID , UserName,
+		Content)
+		VALUES (#{articleID},
+		#{fatherID},#{userName},#{content})
+	</insert>
+
+
+</mapper>

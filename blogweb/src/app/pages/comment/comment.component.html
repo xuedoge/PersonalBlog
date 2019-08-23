@@ -1,0 +1,16 @@
+<div class="CommentHeader">
+  <h2>Comment</h2>
+  <app-newcomment (outer)="clickComment($event)"></app-newcomment>
+</div>
+
+    <nz-list [nzDataSource]="commentList" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+      <ng-template #item let-item>
+        <nz-comment [nzAuthor]="item.userName" [nzDatetime]="item.createTime">
+          <nz-comment-content>
+            <p>{{ item.content }}</p>
+          </nz-comment-content>
+          <nz-comment-action>Reply to</nz-comment-action>
+        </nz-comment>
+      </ng-template>
+    </nz-list>
+  

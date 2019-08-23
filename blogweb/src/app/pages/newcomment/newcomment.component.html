@@ -1,0 +1,14 @@
+<button nz-button nzType="link" (click)="showModal()">
+  <span>New comment</span>
+</button>
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Create a new comment" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()"
+  [nzOkLoading]="isOkLoading">
+
+  <div class="newpage">
+    <input nz-input placeholder="Input yout name" [(ngModel)]="userName" />
+    <br>
+    <br>
+    <textarea rows="5" nz-input [(ngModel)]="content"></textarea>
+  </div>
+
+</nz-modal>

@@ -1,0 +1,16 @@
+<div class="newpage">
+    <div>
+        <h1>New Blog</h1>
+    </div>
+    <div class="line1">
+        <app-title #title></app-title>
+        <app-classes #class></app-classes>
+        <app-showmodal></app-showmodal>
+        <button nz-button nzType="primary" (click)="title.onClickTitle();
+                                                    class.onClickClass();
+                                                    text.onClickText();
+                                                    onClickPut()" >Finish</button>
+    </div>
+    <br>
+    <app-text #text></app-text>
+</div>

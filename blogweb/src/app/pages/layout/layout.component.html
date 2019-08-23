@@ -1,0 +1,38 @@
+<nz-layout class="layout">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzBreakpoint]="'lg'" [nzCollapsedWidth]="0"
+    [nzZeroTrigger]="zeroTrigger">
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+
+      <li *ngFor="let idx of class ; let i = index" nz-submenu [nzTitle]="idx.className">
+        <ul>
+          <li *ngFor="let ar of articles[i]" nz-menu-item (click)="child1.clickArticle(ar.articleID); child2.clickComment(ar.articleID); clickUpTitle()">{{ar.title}}</li>
+
+        </ul>
+      </li>
+
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="title">
+        <h1>
+          {{articleHeader.title}}
+        </h1>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <app-content #child1></app-content>
+      </div>
+    </nz-content>
+    <nz-content class="comment">
+      <div class="inner-content">
+        <app-comment #child2></app-comment>
+
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
+<ng-template #zeroTrigger>
+</ng-template>

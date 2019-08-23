@@ -1,0 +1,11 @@
+<nz-select style="width: 120px;" nzShowSearch nzAllowClear [(ngModel)]="classID" [nzDropdownRender]="render">
+  <nz-option *ngFor="let item of classList" [nzValue]="item.classID" [nzLabel]="item.className">
+  </nz-option>
+
+</nz-select>
+<!--
+<ng-template #render>
+  <nz-divider style="margin: 4px 0;"></nz-divider>
+  <div style="padding: 8px; cursor: pointer"></div>
+</ng-template>
+-->
